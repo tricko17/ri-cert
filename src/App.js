@@ -1,23 +1,16 @@
 import PropTypes from "prop-types";
 import './App.css';
-import Shapes from './components/shapes/shapes'
-import Logos from './components/logos/logos'
-import {ReactComponent as MakeLogo} from './logo.svg'
-import {ReactComponent as ReactLogo} from './react-logo.svg'
 
-function App({ headline, showLogos, backgroundImage }) {
+function App({ headline, showLogos, backgroundImage, qrcode }) {
   return (
-    <div className="App" style={{ backgroundImage: `url('${backgroundImage}')` }}>
-      {showLogos && (
-        <Logos logoOne={<MakeLogo />} logoTwo={<ReactLogo />} />
-      )}
-
-      <h1>{headline}</h1>
-
-      <div className="shape-container">
-        <Shapes />
-      </div>
+    <div class="container-fluid">
+        <div class="book">
+            <div class="page" style={{ backgroundImage: `url('${backgroundImage}')` }}>
+                
+            </div>
+        </div>
     </div>
+
   );
 }
 
@@ -28,9 +21,10 @@ App.propTypes = {
 }
 
 App.defaultProps = {
-  headline: 'Hello World',
+  headline: 'ABDULLAH ARIEF SYAHPUTRA PRAWIRANEGARA SUBAMBANG HARIS',
   showLogos: true,
-  backgroundImage: '',
+  backgroundImage: 'http://ruang-ilmiah.oss-ap-southeast-5.aliyuncs.com/template_cert_kc/2022042910394007.jpg',
+  qrcode: ''
 }
 
 export default App;

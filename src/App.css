@@ -1,41 +1,55 @@
-*{box-sizing:border-box}
-html,body {
+.book {
   margin: 0;
-  padding:0;
-  overflow:hidden;
-  max-width: 100vw;
-  max-height:100vh;
-  font-family: 'IBM Plex Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  padding: 0;
+  background-color: #FAFAFA;
+  font: 12pt "Tahoma";
 }
 
-.App {
-  width: 100vw;
-  height: 100vh;
+* {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+}
+
+.page {
+  display: block;
+  width: 29.7cm;
+  height: 21cm;  
+  margin: 0 auto;
+  border: 1px #D3D3D3 solid;
+  border-radius: 5px;
+  background: white;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
 }
 
-h1 {
-  font-size: clamp( 16px, 10vh, 250px);
-  font-weight: 700;
-  line-height: 100%;
-  color: #1f2a44;
-  text-align: center;
-  width: 100%;
-  padding: 0 2rem;
-  z-index: 1;
+.subpage {
+  margin: calc(100 / 23 * 1vw);
+  width: calc(100 / 23 * 19vw);
+  height: calc(100 / 23 * 27.7vw);
+  outline: 0cm #FAFAFA solid;
+}
+
+@page {
+  size: A4;
+  margin: 0;
+}
+
+@media print {
+  .page {
+    margin: 0;
+    border: initial;
+    border-radius: initial;
+    width: initial;
+    min-height: initial;
+    box-shadow: initial;
+    background: initial;
+    page-break-after: always;
+  }
 }
