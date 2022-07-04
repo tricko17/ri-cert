@@ -6,7 +6,17 @@ function App({ headline, showLogos, backgroundImage, qrcode }) {
     <div class="container-fluid">
         <div class="book">
             <div class="page" style={{ backgroundImage: `url('${backgroundImage}')` }}>
-                
+            {
+              (headline.length > 52) ?
+                <h2>{headline}</h2> :
+                <h1>{headline}</h1>
+            }
+      
+            {
+              (qrcode == "") ?
+                null : <img src={qrcode} width={'120px'} height={'120px'} style={{ position: 'absolute', left: '44px', top: '565px' }} />
+            }
+      
             </div>
         </div>
     </div>
